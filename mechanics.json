@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "values": [
+    {"name": "first check delay", "group": "timer", "value": 0, "unit": "min", "source": "AlertContext::.ctor 0x06000006 (TimeSpan.Zero)"},
+    {"name": "initial check period", "group": "timer", "value": 60, "unit": "min", "source": "AlertContext::.ctor 0x06000006 (FromMinutes 60)"},
+    {"name": "hourly-check threshold", "group": "timer", "value": 3, "unit": "days", "source": "AlertPasswordExpiration 0x06000008 (ldc.i4.3, bgt)"},
+    {"name": "urgent check interval", "group": "timer", "value": 60, "unit": "min", "source": "AlertPasswordExpiration 0x06000008 (FromMinutes 60)"},
+    {"name": "normal check interval", "group": "timer", "value": 1, "unit": "day", "source": "AlertPasswordExpiration 0x06000008 (FromDays 1)"},
+    {"name": "warning threshold", "group": "alerts", "value": 10, "unit": "days", "source": "AlertPasswordExpiration 0x06000008 / get_BalloonTipText 0x06000009 (ldc.i4.s 10)"},
+    {"name": "balloon timeout", "group": "alerts", "value": 30000, "unit": "ms", "source": "IconClick 0x06000007 (ldc.i4 30000)"},
+    {"name": "warning box style", "group": "alerts", "value": "OK + warning icon, default desktop only (0x20000)", "source": "AlertPasswordExpiration 0x06000008 (MessageBox.Show 0,48,0,131072)"},
+    {"name": "cache reuse window", "group": "lookup", "value": 5, "unit": "min", "source": "PasswordExpirationDays 0x0600000a (ldc.r8 5)"},
+    {"name": "cache only when days above", "group": "lookup", "value": 3, "unit": "days", "source": "PasswordExpirationDays 0x0600000a (ldc.i4.3)"},
+    {"name": "expiry attribute", "group": "lookup", "value": "msDS-UserPasswordExpiryTimeComputed", "source": "get_PasswordExpirationDays 0x0600000e"},
+    {"name": "never-expires days", "group": "lookup", "value": 2147483647, "source": "get_PasswordExpirationDays 0x0600000e (ldc.i4 2147483647)"},
+    {"name": "days rounding", "group": "lookup", "value": "whole days, truncated toward zero", "source": "get_PasswordExpirationDays 0x0600000e (TimeSpan.Days)"},
+    {"name": "single instance", "group": "startup", "value": true, "source": "Program::Main 0x0600000d (named Mutex, WaitOne(0))"},
+    {"name": "main program role", "group": "startup", "value": ".NET Core 3.1.18 launcher for PasswordAlert.dll", "source": "function 0x140011d00 (hostfxr_main_startupinfo) and 0x1400124f0 (bound PasswordAlert.dll)"},
+    {"name": "launcher's only message box", "group": "startup", "value": "install .NET Core prompt (not the password warning)", "source": "function 0x14000b150 (MessageBoxW, MB_YESNO|MB_ICONERROR 0x14)"},
+    {"name": "start with Windows", "group": "extras", "value": false, "estimated": true},
+    {"name": "local account expiry", "group": "extras", "value": "password age vs maximum age", "estimated": true}
+  ]
+}

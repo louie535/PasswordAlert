@@ -1,0 +1,31 @@
+[package]
+name = "password-alert"
+version = "1.0.0"
+edition = "2021"
+
+[[bin]]
+name = "password-alert"
+path = "src/main.rs"
+
+[dependencies]
+eframe = { version = "0.29", default-features = false, features = ["default_fonts", "glow"] }
+png = "0.17"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+raw-window-handle = "0.6"
+windows-sys = { version = "0.59", features = [
+    "Win32_Foundation",
+    "Win32_Security",
+    "Win32_UI_Shell",
+    "Win32_UI_WindowsAndMessaging",
+    "Win32_System_LibraryLoader",
+    "Win32_System_Threading",
+    "Win32_System_Registry",
+    "Win32_System_SystemInformation",
+    "Win32_System_Time",
+    "Win32_Graphics_Gdi",
+    "Win32_NetworkManagement_NetManagement",
+] }
+
+[profile.release]
+opt-level = 2

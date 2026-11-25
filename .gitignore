@@ -1,0 +1,38 @@
+# Rust build output
+/target/
+**/*.rs.bk
+*.pdb
+
+# Packaged releases and compiled programs (build them with package.ps1)
+/dist/
+*.exe
+*.dll
+*.a
+*.lib
+*.zip
+*.msi
+
+# Test pictures made with --screenshot
+/shots/
+
+# Local tool settings (machine-specific paths)
+/.cargo/
+.vscode/
+.idea/
+*.code-workspace
+
+# Secrets and credentials: never commit
+.env
+.env.*
+*.pem
+*.key
+*.pfx
+*.p12
+*.snk
+secrets.*
+credentials.*
+
+# OS clutter
+Thumbs.db
+desktop.ini
+.DS_Store
