@@ -15,6 +15,22 @@
 # Test pictures made with --screenshot
 /shots/
 
+# Temporary files
+*.tmp
+*.temp
+*.log
+*.bak
+*.swp
+*~
+
+# The original (proprietary) application's files must never be committed
+*.deps.json
+*.runtimeconfig.json
+*.lnk
+/original/
+/capture/
+/reference/
+
 # Local tool settings (machine-specific paths)
 /.cargo/
 .vscode/
